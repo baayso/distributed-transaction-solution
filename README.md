@@ -64,10 +64,15 @@ Cancel | 取消执行业务操作，实际回滚数据，需要保证幂等 |
   * 二阶段 commit 行为：调用 自定义 的 commit 逻辑。
   * 二阶段 rollback 行为：调用 自定义 的 rollback 逻辑。
   * 所谓 TCC 模式，是指支持把 自定义 的分支事务纳入到全局事务的管理中。
+  * **TCC 适用模型与适用场景分析**（ https://seata.io/zh-cn/blog/tcc-mode-applicable-scenario-analysis.html ）
 
 * Saga模式
   > Saga模式是SEATA提供的长事务解决方案，在Saga模式中，业务流程中每个参与者都提交本地事务，当出现某一个参与者失败则补偿前面已经成功的参与者，一阶段正向服务和二阶段补偿服务都由业务开发实现。
   > http://seata.io/zh-cn/docs/dev/mode/saga-mode.html
+
+* **分布式事务 Seata 及其三种模式详解**
+  * https://seata.io/zh-cn/blog/seata-at-tcc-saga.html
+  * https://tech.antfin.com/community/activities/779/review/901
 
 * Spring Cloud 快速集成 Seata
   * https://github.com/seata/seata-samples/blob/master/doc/quick-integration-with-spring-cloud.md
