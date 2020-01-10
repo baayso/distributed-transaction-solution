@@ -71,3 +71,6 @@ Cancel | 取消执行业务操作，实际回滚数据，需要保证幂等 |
 
 * Spring Cloud 快速集成 Seata
   * https://github.com/seata/seata-samples/blob/master/doc/quick-integration-with-spring-cloud.md
+
+## 参考文献：
+* 分布式事务解决方案汇总：2PC、3PC、消息中间件、TCC、状态机+重试+幂等( https://www.cnblogs.com/myseries/p/10939355.html 、 https://blog.csdn.net/uxiAD7442KMy1X86DtM3/article/details/88968532 )
