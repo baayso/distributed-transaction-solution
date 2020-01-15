@@ -1,6 +1,7 @@
 # Distributed Transaction Solution（分布式事务解决方案）
 
-## 1. 2PC（Two Phase Commitment Protocol两阶段提交）与 XA协议
+## 1. 2PC（Two Phase Commitment Protocol两阶段提交）
+![2PC](https://github.com/baayso/distributed-transaction-solution/blob/master/images/2PC.png)
 * 两种角色
   * 一个事务协调者(Coordinator)：负责协调多个事务参与者进行事务投票及提交、回滚
   * 多个事务参与者(Participants)：本地事务执行者
@@ -21,6 +22,8 @@
 ## 3. TCC（Try-Confirm-Cancel，又称事务补偿或代码补偿）
 > 和两阶段提交相类似，Try为第一阶段，Confirm-Cancel为第二阶段，是一种应用层面侵入业务的两阶段提交，需要写代码实现Try-Confirm-Cancel三个方法。
 
+![TCC](https://github.com/baayso/distributed-transaction-solution/blob/master/images/TCC.png)
+
 操作方法 | 含义
 -|-
 Try | 预留业务资源/数据校验，尝试检查当前操作是否可执行 |
@@ -34,10 +37,10 @@ Cancel | 取消执行业务操作，实际回滚数据，需要保证幂等 |
   * 缺点：需要手动编写Try-Confirm-Cancel三个方法的实现，如果项目中使用TCC事务的业务比较多时需要编写大量的代码，以及后续的代码维护工作量。
 
 ## 4. 可靠消息最终一致性
-
+![可靠消息最终一致性方案2-独立消息服务](https://github.com/baayso/distributed-transaction-solution/blob/master/images/%E5%8F%AF%E9%9D%A0%E6%B6%88%E6%81%AF%E6%9C%80%E7%BB%88%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%882-%E7%8B%AC%E7%AB%8B%E6%B6%88%E6%81%AF%E6%9C%8D%E5%8A%A1.png)
 
 ## 5. 柔性事务-最大努力通知（定期校对）
-
+![柔性事务-最大努力通知（定期校对）](https://github.com/baayso/distributed-transaction-solution/blob/master/images/%E6%9F%94%E6%80%A7%E4%BA%8B%E5%8A%A1-%E6%9C%80%E5%A4%A7%E5%8A%AA%E5%8A%9B%E9%80%9A%E7%9F%A5%EF%BC%88%E5%AE%9A%E6%9C%9F%E6%A0%A1%E5%AF%B9%EF%BC%89.png)
 
 ## 6. Seata（ http://seata.io ）
 
